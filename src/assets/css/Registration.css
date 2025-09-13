@@ -1,0 +1,50 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(../media/images/Asset4.jpg) !important;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#kt_app_root {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.bg-body{
+        border: 1px solid #606060bb;
+        box-shadow: 5px 5px 10px 0px #ffd70033;
+        background-color: #111827ef!important;
+}
+.form-control.is-invalid, .was-validated .form-control:invalid{
+    border-color: #ff5500;
+}
+.form-control.is-invalid:focus, .was-validated .form-control:invalid:focus{
+    border-color: #ff5500;
+}
+.fv-plugins-message-container .fv-help-block{
+    color: #ff5500;
+}
+.form-control, .form-control:focus{
+    color: #fff;
+}
+[data-bs-theme=light] {
+    --bs-form-invalid-border-color: #ff5500;
+}
+
+.stepper.stepper-links .stepper-nav .stepper-item .stepper-title{
+    color: var(--bs-white)
+}
