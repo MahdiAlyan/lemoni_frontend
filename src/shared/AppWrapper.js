@@ -13,6 +13,14 @@ import { RegistrationSuccess } from "../pages/registration/RegisterSuccess";
 import { ForgotPassword } from "../pages/registration/ForgotPassword";
 import { ResetPassword } from "../pages/registration/RestPassword";
 import { PrivacyAndPolicy } from "../pages/registration/PrivacyAndPolicy";
+import Calendar from "../pages/calendar/Calendar.js"; 
+import Clients from "../pages/client/ClientList.js"; 
+import DroneProfile from "../pages/myDrones/DroneProfile.js";
+import MyDrones from "../pages/myDrones/MyDrones.js"
+import Missions from "../pages/missions/Missions.js"
+import MissionDetails from "../pages/missions/MissionDetails.js"
+import UserProfile from "../pages/user/UserProfile.js"
+import Analytics from "../pages/analytics/Analytics.js"
 
 const AppWrapper = () => {
     useEffect(() => {
@@ -66,8 +74,17 @@ const AppWrapper = () => {
                         <Route path='/auth/terms-conditions' element={<PrivacyAndPolicy/>} exact/>
                     
                     </Route>
-                    <Route element={<ProtectedRoute allowedRoles={['ADMIN', "MANAGER"]}><DashboardWrapper/></ProtectedRoute>}>
+                    <Route element={<ProtectedRoute allowedRoles={['ADMIN']}><DashboardWrapper/></ProtectedRoute>}>
                         <Route path='/' element={<Dashboard/>} exact/>
+                        <Route path='/calendar' element={<Calendar/>} exact/>
+                        <Route path='/analytics' element={<Analytics/>} exact/>
+                        <Route path='/clients' element={<Clients/>} exact/>
+                        <Route path='/mydrones/:id' element={<DroneProfile/>} exact/>
+                        <Route path='/mydrones' element={<MyDrones/>} exact/>
+                        <Route path='/missions' element={<Missions/>} exact/>
+                        <Route path='/missions/:id' element={<MissionDetails/>} exact/>
+                        <Route path='/user-profile' element={<UserProfile/>} exact/>
+
                     </Route>
                 </Routes>
 

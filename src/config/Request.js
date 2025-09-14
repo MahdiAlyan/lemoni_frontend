@@ -6,22 +6,20 @@ import {useNavigate} from "react-router-dom";
 import {toast} from "react-toastify";
 
 
-const headers = {
-    'app-version': 1,
-    'device-type': "web",
-    'authorization': 'Bearer ' + Auth.getAccessToken(),
-}
+// Avoid sending custom headers by default (they force preflight and require server CORS changes)
+const headers = {};
 
-
-let baseURL = process.env.BaseUrl
+// Default to local backend; can be overridden with REACT_APP_API_URL
+let baseURL = process.env.REACT_APP_API_URL || 'http://127.0.0.1:8000/api';
 
 const Request = axios.create({
-    baseURL: baseURL,
-    timeout: 60000,
-    headers: headers,
-    withCredentials: true,
+  baseURL: baseURL,
+  timeout: 30000,
+  headers: headers,
+  // Do not send credentials (cookies) by default during local dev; enable if backend requires cookies
+  withCredentials: false,
 });
-Request.defaults.withCredentials = true;
+Request.defaults.withCredentials = false;
 
 
 Request.interceptors.request.use(

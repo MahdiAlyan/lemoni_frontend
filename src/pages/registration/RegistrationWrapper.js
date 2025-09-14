@@ -24,43 +24,12 @@ const RegistrationWrapper = () => {
                         <div
                             className="bg-body d-flex flex-column align-items-stretch flex-center rounded-4 w-md-600px p-20">
                             <div className="d-flex flex-center flex-column flex-lg-row-fluid">
-                                <img src="../../assets/media/logos/logo.png" width={100}/>
+                                <img src="../../assets/media/logos/icon.png" width={100}/>
 
                                 <div className="w-lg-500px p-10">
 
                                     <Outlet/>
 
-                                </div>
-                                <div className="d-flex align-items-center justify-content-between w-100 mt-10 mt-lg-0">
-                                    <div className="text-center flex-grow-1 text-gray-500 fw-bold">
-                                        {Tools.translate('POWERED_BY')}{" "}
-                                        {isArabic ? (
-                                            <>
-                                                <a
-                                                    href="https://neruos.tech/"
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="text-gray-700 text-hover-primary fs-6 fw-semibold"
-                                                >
-                                                    Neruos.tech
-                                                </a>{" "}
-                                                {" "}
-                                                {Tools.translate('ALL_RIGHTS_RESERVED')} {currentYear} © .
-                                            </>
-                                        ) : (
-                                            <>
-                                                <a
-                                                    href="https://neruos.tech/"
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="text-gray-700 text-hover-primary fs-6 fw-semibold"
-                                                >
-                                                    Neruos.tech
-                                                </a>{" "}
-                                                © {currentYear}. {Tools.translate('ALL_RIGHTS_RESERVED')}.
-                                            </>
-                                        )}
-                                    </div>
                                 </div>
                             </div>
                         </div>

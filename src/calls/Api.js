@@ -117,10 +117,25 @@ const adminDashboardKpis = async (data) => {
     return Request.get('/dashboard/admins-dashboard-kpis/', {params: data})
 };
 
-//cashier dashobard
-const todayTransactions = async (data) => {
-    return Request.get('/dashboard/todays-transactions/', {params: data})
-};
+
+// DRONES API CALLS
+const getMyDrones = async (params) => {
+    // Returns a list of drones for the current user
+    return Request.get('mydrones/drones/', { params: data });
+}
+
+const getDroneById = async (id) => {
+    return Request.get(`/drones/${id}/`);
+}
+
+// MISSIONS API
+const getMissions = async (params) => {
+    return Request.get('/missions/', { params });
+}
+
+const getMissionById = async (id) => {
+    return Request.get(`/missions/${id}/`);
+}
 
 
 
@@ -144,6 +159,9 @@ export {
     dismissNotification,
     dismissAllNotification,
     adminDashboardKpis,
-    todayTransactions,
     changeProfileImage,
+    getMyDrones,
+    getDroneById,
+    getMissions,
+    getMissionById,
 }
